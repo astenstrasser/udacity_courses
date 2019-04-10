@@ -17,10 +17,12 @@ class LinkedList:
                 self.head = new_element
 
     def get_position(self, position):
+        current_element = self.head
         try:
-            for _ in range(1, position+1):
-                current_element = current.next
-            return current_element.value
+            for _ in range(position):
+                print(current_element.next)
+                current_element = current_element.next
+            return current_element
         except:
             return None
 
