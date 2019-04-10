@@ -19,8 +19,7 @@ class LinkedList:
     def get_position(self, position):
         current_element = self.head
         try:
-            for _ in range(position):
-                print(current_element.next)
+            for _ in range(1,position):
                 current_element = current_element.next
             return current_element
         except:
