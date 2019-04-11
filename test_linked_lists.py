@@ -19,7 +19,7 @@ class TestLinkedLists:
     def e3(self):
         e3 = Element(3)
         return e3
-    
+
     @pytest.fixture
     def e4(self):
         e4 = Element(4)
@@ -35,11 +35,11 @@ class TestLinkedLists:
     def test_linked_lists(self, linkedlist):
         assert linkedlist.head.next.next.value == 3
 
-    def test_get_position(self,linkedlist):
+    def test_get_position(self, linkedlist):
         assert linkedlist.get_position(3).value == 3
 
     def test_insert(self, linkedlist, e4):
-        linkedlist.insert(e4,3)
+        linkedlist.insert(e4, 3)
         assert linkedlist.get_position(3).value == 4
 
     def test_delete(self, linkedlist):
