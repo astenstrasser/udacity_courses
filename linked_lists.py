@@ -25,11 +25,11 @@ class LinkedList:
         except:
             return None
 
-def insert(self, new_element, position):
-    """Acrescente um novo node na posição determinada.
-    Suponha que a primeira posição seja "1".
-    Inserir na posição 3 significa estar localizado entre o 2º e 3º elementos."""
-    pass
+    def insert(self, new_element, position):
+        replaced_item = self.get_position(position)
+        new_element.next = replaced_item.next
+        last_item = self.get_position(position-1)
+        last_item.next = new_element
 
 
 def delete(self, value):

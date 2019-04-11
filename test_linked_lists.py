@@ -37,3 +37,7 @@ class TestLinkedLists:
 
     def test_get_position(self,linkedlist):
         assert linkedlist.get_position(3).value == 3
+
+    def test_insert(self, linkedlist, e4):
+        linkedlist.insert(e4,3)
+        assert linkedlist.get_position(3).value == 4
