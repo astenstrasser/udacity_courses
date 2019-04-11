@@ -32,7 +32,13 @@ class LinkedList:
         last_item.next = new_element
 
 
-def delete(self, value):
-    """Exclua o primeiro node que contenha um valor determinado."""
-    pass
+    def delete(self, value):
+        current_element = self.head
+        if current_element.value == value:
+            self.head = current_element.next
+        else:
+            while current_element.next:
+                if current_element.next.value == value:
+                    current_element.next = current_element.next.next
+                current_element = current_element.next
     

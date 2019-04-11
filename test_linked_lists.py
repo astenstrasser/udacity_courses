@@ -41,3 +41,8 @@ class TestLinkedLists:
     def test_insert(self, linkedlist, e4):
         linkedlist.insert(e4,3)
         assert linkedlist.get_position(3).value == 4
+
+    def test_delete(self, linkedlist):
+        value_to_be_deleted = 1
+        linkedlist.delete(value_to_be_deleted)
+        assert linkedlist.get_position(1).value == 2
