@@ -37,5 +37,5 @@ class TestStacks:
         assert stack.linkedlist.get_position(3).value == 1
 
     def test_pop(self, stack):
-        stack.pop()
-        assert stack.linkedlist.head.value == 2
+        assert stack.pop().value == 3
+

@@ -45,4 +45,4 @@ class Stack(LinkedList):
         self.linkedlist.insert_first(new_element)
 
     def pop(self):
-        self.linkedlist.delete_first()
+        return self.linkedlist.delete_first()
