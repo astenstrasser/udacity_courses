@@ -17,9 +17,19 @@ class LinkedList:
         else:
             self.head = new_element
 
+    def get_position(self, position):
+        current_element = self.head
+        try:
+            for _ in range(1, position):
+                current_element = current_element.next
+            return current_element
+        except:
+            return None
+
     def insert_first(self, new_element):
-        # "Acrescente um novo elemento como título da lista vinculada"
-        pass
+        current = self.head
+        self.head = new_element
+        new_element.next = current
 
     def delete_first(self):
         # "Exclua o primeiro elemento (título) na lista vinculada e o retorne"
@@ -28,10 +38,10 @@ class LinkedList:
 
 class Stack(LinkedList):
     def __init__(self, top=None):
-        self.linkedllist = LinkedList(top)
+        self.linkedlist = LinkedList(top)
 
     def push(self, new_element):
-        self.insert_first(new_element)
+        self.linkedlist.insert_first(new_element)
 
     def pop(self):
-        self.delete_first()
+        self.linkedlist.delete_first()
