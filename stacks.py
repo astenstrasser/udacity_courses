@@ -32,8 +32,9 @@ class LinkedList:
         new_element.next = current
 
     def delete_first(self):
-        # "Exclua o primeiro elemento (título) na lista vinculada e o retorne"
-        pass
+        poped_item = self.head
+        self.head = self.head.next
+        return poped_item
 
 
 class Stack(LinkedList):

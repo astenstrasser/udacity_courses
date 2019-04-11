@@ -27,14 +27,15 @@ class TestStacks:
         return e4
 
     @pytest.fixture
-    def stack(self, e1):
+    def stack(self, e1, e2, e3):
         stack = Stack(e1)
-        return stack
-
-    def test_push(self, stack, e2, e3):
         stack.push(e2)
         stack.push(e3)
+        return stack
+
+    def test_push(self, stack):
         assert stack.linkedlist.get_position(3).value == 1
 
-    def test_pop(self, e4):
-        pass
+    def test_pop(self, stack):
+        stack.pop()
+        assert stack.linkedlist.head.value == 2
