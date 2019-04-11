@@ -39,3 +39,8 @@ class TestStacks:
     def test_pop(self, stack):
         assert stack.pop().value == 3
 
+    def test_pop_none(self, stack):
+        stack.pop()
+        stack.pop()
+        stack.pop()
+        assert stack.pop() == None

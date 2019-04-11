@@ -32,10 +32,12 @@ class LinkedList:
         new_element.next = current
 
     def delete_first(self):
-        poped_item = self.head
-        self.head = self.head.next
-        return poped_item
-
+        try:
+            poped_item = self.head
+            self.head = self.head.next
+            return poped_item
+        except:
+            return None
 
 class Stack(LinkedList):
     def __init__(self, top=None):
