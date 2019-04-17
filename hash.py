@@ -8,13 +8,18 @@ class HashTable(object):
         self.table = [None]*10000
 
     def store(self, string):
-        """Submeta uma string que esteja armazenada na tabela."""
-        pass
+        hash_value = self.calculate_hash_value(string)
+        if self.table[hash_value] == None:
+            self.table[hash_value] = string
+        else:
+            self.table[hash_value].append(string)
 
     def lookup(self, string):
-        """Retorne o valor hash caso a string já esteja na tabela.
-        Caso contrário, retorne -1."""
-        return -1
+        hash_value = self.calculate_hash_value(string)
+        if self.table[hash_value] == None:
+            return -1
+        else:
+            return hash_value
 
     def calculate_hash_value(self, string):
         hash_value = (ord(string[0])*100) + ord(string[1])

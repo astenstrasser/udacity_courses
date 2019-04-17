@@ -13,3 +13,7 @@ class TestHash:
 
     def test_edge_case(self, hash_table):
         assert hash_table.lookup('UDACITY') == -1
+
+    def test_store(self, hash_table):
+        hash_table.store('UDACITY')
+        assert hash_table.lookup('UDACITY') == 8568
