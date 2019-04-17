@@ -8,5 +8,8 @@ class TestHash:
         hash_table = HashTable()
         return hash_table
 
-    def test_calculate_hash_value(self):
-        pass
+    def test_calculate_hash_value(self, hash_table):
+        assert hash_table.calculate_hash_value('UDACITY') == 8568
+
+    def test_edge_case(self, hash_table):
+        assert hash_table.lookup('UDACITY') == -1
