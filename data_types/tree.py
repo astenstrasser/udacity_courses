@@ -13,16 +13,11 @@ class BinaryTree:
         self.root = Node(root)
 
     def search(self, find_val):
-    # """Retorne Verdadeiro caso o valor 
-    # estiver contido na árvore, caso contrário, 
-    # retorne Falso."""
         return self.preorder_search(self.root, find_val)
 
     def print_tree(self):
-        """Imprima todos os nodes (nós) de árvore
-        conforme são visitados em
-        uma travessia preordenada."""
-        return ""
+        tree = self.preorder_print(self.root, '')[:-1]
+        return tree
 
     def preorder_search(self, start, find_val):
         if start:
@@ -32,7 +27,9 @@ class BinaryTree:
                 return self.preorder_search(start.left, find_val) or self.preorder_search(start.right, find_val)
         return False
 
-    def preorder_print(self, start, traversal):
-        """Método auxiliar - utilize-o para criar uma 
-        solução recursiva de impressão."""
-        return traversal
+    def preorder_print(self, node, tree_track):
+        if node:
+            tree_track += str(node.value)+'-'
+            tree_track = self.preorder_print(node.left, tree_track)
+            tree_track = self.preorder_print(node.right, tree_track)
+        return tree_track

@@ -18,3 +18,6 @@ class TestBinaryTree:
     @pytest.mark.parametrize('searched, expected', search_test_input)
     def test_search(self, binary_tree, searched, expected):
         assert binary_tree.search(searched) == expected
+
+    def test_print(self, binary_tree):
+        assert binary_tree.print_tree() == '1-2-4-5-3'
