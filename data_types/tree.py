@@ -16,8 +16,7 @@ class BinaryTree:
     # """Retorne Verdadeiro caso o valor 
     # estiver contido na árvore, caso contrário, 
     # retorne Falso."""
-        found = False
-        return found
+        return self.preorder_search(self.root, find_val)
 
     def print_tree(self):
         """Imprima todos os nodes (nós) de árvore
@@ -26,8 +25,11 @@ class BinaryTree:
         return ""
 
     def preorder_search(self, start, find_val):
-        """Método auxiliar - utilize-o para criar uma 
-        solução recursiva de pesquisa."""
+        if start:
+            if start.value == find_val:
+                return True
+            else:
+                return self.preorder_search(start.left, find_val) or self.preorder_search(start.right, find_val)
         return False
 
     def preorder_print(self, start, traversal):

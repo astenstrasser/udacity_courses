@@ -7,7 +7,14 @@ class TestBinaryTree:
     @pytest.fixture
     def binary_tree(self):
         binary_tree = BinaryTree(1)
+        binary_tree.root.left = Node(2)
+        binary_tree.root.right = Node(3)
+        binary_tree.root.left.left = Node(4)
+        binary_tree.root.left.right = Node(5)
         return binary_tree
 
-    def test_search(self):
-        pass
+    search_test_input = [(3, True),
+                         (0, False)] 
+    @pytest.mark.parametrize('searched, expected', search_test_input)
+    def test_search(self, binary_tree, searched, expected):
+        assert binary_tree.search(searched) == expected
