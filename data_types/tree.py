@@ -15,10 +15,6 @@ class BinaryTree:
     def search(self, find_val):
         return self.preorder_search(self.root, find_val)
 
-    def print_tree(self):
-        tree = self.preorder_print(self.root, '')[:-1]
-        return tree
-
     def preorder_search(self, start, find_val):
         if start:
             if start.value == find_val:
@@ -26,6 +22,10 @@ class BinaryTree:
             else:
                 return self.preorder_search(start.left, find_val) or self.preorder_search(start.right, find_val)
         return False
+
+    def print_tree(self):
+        tree = self.preorder_print(self.root, '')[:-1]
+        return tree
 
     def preorder_print(self, node, tree_track):
         if node:

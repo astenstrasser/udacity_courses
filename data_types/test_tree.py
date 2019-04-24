@@ -2,6 +2,7 @@ from tree import Node
 from tree import BinaryTree
 import pytest
 
+
 class TestBinaryTree:
 
     @pytest.fixture
@@ -14,7 +15,8 @@ class TestBinaryTree:
         return binary_tree
 
     search_test_input = [(3, True),
-                         (0, False)] 
+                         (0, False)]
+
     @pytest.mark.parametrize('searched, expected', search_test_input)
     def test_search(self, binary_tree, searched, expected):
         assert binary_tree.search(searched) == expected
