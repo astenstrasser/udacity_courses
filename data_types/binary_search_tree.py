@@ -13,23 +13,23 @@ class BinarySearchTree:
     def insert(self, value, position = 'root'):
         if position == 'root':
             position = self.root
-        if position.value < value:
+        if position.value > value:
             if position.left == None:
                 position.left = Node(value)
             else:
-                insert(value, position.left)   
-        if position.value > value:
+                self.insert(value, position.left)   
+        if position.value < value:
             if position.right == None:
                 position.right = Node(value)
             else:
-                insert(value, position.right)
+                self.insert(value, position.right)
 
     def get_values(self, position = 'root', tree_values = ''):
         if position:
             if position == 'root':
                 position = self.root
             tree_values += str(position.value)
-            tree_values = get_values(self.left, tree_values)
-            tree_values = get_values(self.right, tree_values)
+            tree_values = self.get_values(position.left, tree_values)
+            tree_values = self.get_values(position.right, tree_values)
         return tree_values
             
