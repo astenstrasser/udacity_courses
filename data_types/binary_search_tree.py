@@ -32,4 +32,15 @@ class BinarySearchTree:
             tree_values = self.get_values(position.left, tree_values)
             tree_values = self.get_values(position.right, tree_values)
         return tree_values
+    
+    def search(self, value, position = 'root'):
+        if position:
+            if position == 'root':
+                position = self.root
+            if position.value == value:
+                return True
+            else:
+                if self.search(value, position.left) or self.search(value, position.right):
+                    return True
+            return False
             
