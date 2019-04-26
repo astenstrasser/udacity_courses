@@ -10,6 +10,9 @@ Query Syntax:
         order by  (desc?)
         limit n offset n (could use for pagination)
         group by 
+    
+    The basic syntax for the insert statement:
+    insert into table ( column1, column2, ... ) values ( val1, val2, ... );
 
 
 Text and string types
