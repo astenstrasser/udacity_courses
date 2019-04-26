@@ -1,7 +1,15 @@
 Query Syntax:
     The syntax of the select statement with a where clause:
-    select columns from tables where condition ;
+    select columns from tables where condition (and / or / not) condition;
     (Columns are separated by commas; use * to select all columns.)
+
+    ex.: select name form animals where (not species = 'gorilla') and (not name = 'Max');
+         select name form animals where species != 'gorilla' and name != 'Max';   (just like python operator) 
+
+    we can use this in exeptions:
+        order by  (desc?)
+        limit n offset n (could use for pagination)
+        group by 
 
 
 Text and string types
