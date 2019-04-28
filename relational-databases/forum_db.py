@@ -18,6 +18,6 @@ def get_posts():
 def add_post(content):
     data_base = psycopg2.connect("dbname=forum")
     cursor = data_base.cursor()
-    cursor.execute("insert into posts values (%s)", (content,))
+    cursor.execute('insert into posts values (%s)', (content,)) #important to protect code from SQL injections!
     data_base.commit()
     data_base.close()
