@@ -75,6 +75,14 @@ select ordernames.name, count(taxonomy.t_order) as num
     order by num desc
 ```
 
+**Using Distinct:**
+In order to avoid listing duplicates
+
+```sql
+select distinct .... from .... where ...
+```
+
+
 ### insert 
     
 The basic syntax for the insert statement:
