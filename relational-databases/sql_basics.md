@@ -83,12 +83,28 @@ select distinct .... from .... where ...
 ```
 
 
-### insert 
+### insert: 
     
 The basic syntax for the insert statement:
     
 ```sql
-insert into table ( column1, column2, ... ) values ( val1, val2, ... );
+insert into my_table ( column1, column2, ... ) values ( val1, val2, ... );
 ```
 
+### update:
+
+The syntax of the update statement:
+
+```sql
+update my_table set column = my_value where restriction ;
+```
+
+**Using Like:**
+ A simple form of text pattern-matching.
+ The pattern is an SQL text string (so it's in 'single quotes') and can use the % sign to match any sub-string, including the empty string.
+
+ex.: 
+```sql
+update my_table set column = 'safe words' where column like '%spam%'
+```
 
