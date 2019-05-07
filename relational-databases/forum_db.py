@@ -10,7 +10,8 @@ POSTS = [("This is the first post.", datetime.datetime.now())]
 def get_posts():
     data_base = psycopg2.connect("dbname=forum")
     cursor = data_base.cursor()
-    cursor.execute("update posts set content = 'safe content, not spam!' where content like '%spam%'")
+    cursor.execute("update posts set content = 'this_was_spam' where content like '%spam%'")
+    cursor.execute("delete from posts where content = 'this_was_spam'")
     cursor.execute('select content, time from posts order by time desc')
     POSTS = cursor.fetchall()
     data_base.close()
