@@ -108,3 +108,10 @@ ex.:
 update my_table set column = 'safe words' where column like '%spam%'
 ```
 
+### delete:
+
+The syntax:
+
+```sql
+ delete from my_table where restriction 
+```
