@@ -41,7 +41,11 @@ select name form animals where species != 'gorilla' and name != 'Max';   (just l
 ```
 
 In exceptions we can use commands like:
- order by  (desc?), limit n offset n (could use for pagination) and group by. 
+ - order by  (desc? asc?) - can be used with more than one parameter 
+ - limit n offset n (could use for pagination)  
+ - group by 
+ - having
+ - char_length() 
  'Group by' runs before running the other commands in line. The command 'having' filter the results after running the search.
 
 Ex.:
@@ -81,7 +85,6 @@ In order to avoid listing duplicates
 ```sql
 select distinct .... from .... where ...
 ```
-
 
 ### insert: 
     
