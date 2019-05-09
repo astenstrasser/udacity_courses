@@ -47,6 +47,8 @@ In exceptions we can use commands like:
  - having
  - char_length() 
  'Group by' runs before running the other commands in line. The command 'having' filter the results after running the search.
+ - regexp - performs a pattern match of a string expression against a pattern. Using '^anypattern' you test the first letter. Using 'anypattern$' you test the word end.
+ 
 
 Ex.:
 ```sql
