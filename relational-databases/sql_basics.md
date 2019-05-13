@@ -120,3 +120,14 @@ The syntax:
 ```sql
  delete from my_table where restriction 
 ```
+
+
+## Creating tables
+
+### Normalized tables:
+
+Rules:
+- Every row has the same number of columns.
+- There is a unique key, everything in the row is related to the key.
+- what is not related to key should be in another table.
+- Tables shouldnt imply relationships that are not true. Better create more tables.
