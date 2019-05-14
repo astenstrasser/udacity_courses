@@ -55,18 +55,18 @@ Ex.:
 select name, food, count(animals.name) as num 
        from diet, animals 
        where animals.species = diet.species group by food 
-       having num = 1
+       having num = 1;
 ```
 
 
 **Using Join:**
 
 ```sql
-select this, that from Table1 join Table2 on condition
+select this, that from Table1 join Table2 on condition;
 ```
 or using simple join
 ```sql
-select this, that from Table1, Table2 where condition
+select this, that from Table1, Table2 where condition;
 ```
 
 Ex.:
@@ -78,7 +78,7 @@ select ordernames.name, count(taxonomy.t_order) as num
     from animals join taxonomy join ordernames
     on (animals.species = taxonomy.name) and (ordernames.t_order = taxonomy.t_order)
     group by ordernames.name
-    order by num desc
+    order by num desc;
 ```
 
 **Self Join:**
@@ -111,7 +111,7 @@ And a right join does the same but for the right table.
 In order to avoid listing duplicates
 
 ```sql
-select distinct .... from .... where ...
+select distinct .... from .... where ...;
 ```
 
 
@@ -137,7 +137,7 @@ update my_table set column = my_value where restriction ;
 
 ex.: 
 ```sql
-update my_table set column = 'safe words' where column like '%spam%'
+update my_table set column = 'safe words' where column like '%spam%';
 ```
 
 ### delete:
@@ -145,7 +145,7 @@ update my_table set column = 'safe words' where column like '%spam%'
 The syntax:
 
 ```sql
- delete from my_table where restriction 
+ delete from my_table where restriction;
 ```
 
 
