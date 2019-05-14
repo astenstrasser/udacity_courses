@@ -81,7 +81,33 @@ select ordernames.name, count(taxonomy.t_order) as num
     order by num desc
 ```
 
+**Self Join:**
+
+It is possible to join one table with it self if we are looking for similarities in the rows of this table. 
+
+ex.: Find out which pets have the same owner and the same appointment time.
+
+```sql
+select a.name, b.name, a.owner, a.appointment_time
+from pets as a, pets as b
+where a.appointment_time = b.appointment_time 
+and a.owner = b.owner
+and a.id < b.id; 
+```
+
+**Left Join / Right Join**
+
+
+The words “left” and “right” refer to the tables to the left and right of the join operator. 
+
+A regular (inner) join returns only those rows where the two tables have entries matching the join condition. 
+A left join returns all those rows, plus the rows where the left table has an entry but the right table doesn’t. 
+And a right join does the same but for the right table.
+
+
+
 **Using Distinct:**
+
 In order to avoid listing duplicates
 
 ```sql
@@ -181,7 +207,7 @@ create table postal_places (
 drop table my_table_name [options];
 ```
 
-### Defining relationships between tables:
+### Foreing Keys - Defining relationships between tables:
 
 To assure that one column will only have values that are present in other table we need to refer to it:
 
