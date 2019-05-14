@@ -114,6 +114,7 @@ In order to avoid listing duplicates
 select distinct .... from .... where ...
 ```
 
+
 ### insert: 
     
 The basic syntax for the insert statement:
@@ -146,6 +147,24 @@ The syntax:
 ```sql
  delete from my_table where restriction 
 ```
+
+
+### Subqueries:
+
+It is possible to use the output of one query to do a new one.
+
+If we have the query:
+```sql
+select max(grade) as highest_grade from students group by stud_class;
+```
+and we want to find out the average highest grade of all classes, we can use this output on a new query.
+
+```sql
+select avg(highest_grade) from (
+    select max(grade) as highest_grade from students group by stud_class
+) as class_average;
+```
+
 
 ## Creating database
 
@@ -220,3 +239,4 @@ create table grades(
 ```
 
 This way we can only add grades of registered students to this new table. 
+
