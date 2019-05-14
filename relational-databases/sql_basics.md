@@ -121,6 +121,17 @@ The syntax:
  delete from my_table where restriction 
 ```
 
+## Creating database
+
+To create a database, the following command can be used:
+```sql
+create database my_database_name [options];
+```
+
+The database can also be dropped with following command:
+```sql
+drop database my_database_name [options];
+```
 
 ## Creating tables
 
@@ -131,3 +142,18 @@ Rules:
 - There is a unique key, everything in the row is related to the key.
 - what is not related to key should be in another table.
 - Tables shouldnt imply relationships that are not true. Better create more tables.
+
+### Sintax:
+
+- To create a table:
+```sql
+create table my_table (
+    column1 var_type [my_constraints],
+    column2 var_type [my_constraints],
+    [row_constraints]);
+```
+
+- To delete a table:
+```sql
+drop table my_table_name [options];
+```
