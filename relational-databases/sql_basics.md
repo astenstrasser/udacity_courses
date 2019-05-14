@@ -133,6 +133,13 @@ The database can also be dropped with following command:
 drop database my_database_name [options];
 ```
 
+### Psql commands:
+
+- \c database_name - change to this database
+- \dt - list all tables in one database 
+- \l - list all databases on your machine
+
+
 ## Creating tables
 
 ### Normalized tables:
@@ -153,7 +160,37 @@ create table my_table (
     [row_constraints]);
 ```
 
+Examples with primary keys:
+```sql
+create table students (
+    stud_id serial primary key,
+    name text,
+    birthdate date);    
+```
+```sql
+create table postal_places (
+    postal_code text,
+    country text,
+    name text,
+    primary key (postal_code, country)
+);    
+```
+
 - To delete a table:
 ```sql
 drop table my_table_name [options];
 ```
+
+### Defining relationships between tables:
+
+To assure that one column will only have values that are present in other table we need to refer to it:
+
+```sql
+create table grades( 
+    stud_id references students(stud_id),
+    course_id text,
+    grade real
+);
+```
+
+This way we can only add grades of registered students to this new table. 
