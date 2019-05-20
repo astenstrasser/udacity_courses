@@ -47,7 +47,6 @@ In exceptions we can use commands like:
  - having
  - char_length() 
  'Group by' runs before running the other commands in line. The command 'having' filter the results after running the search.
- - regexp - performs a pattern match of a string expression against a pattern. Using '^anypattern' you test the first letter. Using 'anypattern$' you test the word end.
  
 
 Ex.:
@@ -112,6 +111,17 @@ In order to avoid listing duplicates
 
 ```sql
 select distinct .... from .... where ...;
+```
+
+**Using Regexp**
+
+Regexp performs a pattern match of a string expression against a pattern. Using '^anypattern' you test the first letter. 
+Using 'anypattern$' you test the word end.
+
+ex.: Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION.
+
+```sql
+SELECT CITY FROM STATION WHERE CITY REGEXP '[aeuio]$';
 ```
 
 
